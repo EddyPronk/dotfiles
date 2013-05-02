@@ -1,0 +1,2 @@
+1 [Wed Nov 22 1995] Move z-files-startup to z-files, so it can be linked
+	to from site-lisp.

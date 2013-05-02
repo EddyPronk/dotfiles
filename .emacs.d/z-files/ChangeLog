@@ -1,0 +1,136 @@
+2008-04-26  Eddy Pronk  <epronk@muftor.com>
+
+        * Modified copyright headers, inserted GPLv3 reference
+
+2002-01-23  Jan Nieuwenhuizen  <janneke@gnu.org>
+
+        * ctl-z-map.el: Add TAGS map under C-z t.
+
+2002-01-07  Pieter Schoenmakers  <tiggr@tiggr.net>
+
+	* ctl-z-map.el (z-insert-day): New function.
+
+2001-10-24  Pieter Schoenmakers  <tiggr@tiggr.net>
+
+	* ctl-z-map.el (z-kill-buffer-lines): Fixed for emacs 21.
+
+Thu Dec 17 13:19:01 1998  Pieter Schoenmakers  <tiggr@gerbil.org>
+
+	* ctl-z-map.el (z-insert-first-name): New fun, bound to C-z i j.
+	(z-inserted-first-name): New var, default `--Pieter' :-)
+
+1997-12-19  Pieter Schoenmakers  <tiggr@akebono.ics.ele.tue.nl>
+
+	* z-adjustments.el: Make sure we `understand' TOM sources.
+
+Wed Oct  1 16:30:58 1997  Pieter Schoenmakers  <tiggr@cobra.ics.ele.tue.nl>
+
+	* z-adjustments.el (set-directory): New function.
+
+Tue Jun 18 17:18:09 1996  Pieter Schoenmakers  <tiggr@cobra.es.ele.tue.nl>
+
+	* ctl-z-map.el (z-display-binary): New function.
+	(z-binary-little-endian): New variable.
+	(ctl-z-map): Added C-z for z-display-binary.
+
+Mon Mar 25 00:53:56 1996  Pieter Schoenmakers  <tiggr@tricky.es.ele.tue.nl>
+
+	* ctl-z-map.el (z-insert-mail-address): New function, bound to
+	C-z i m.
+
+Mon Jan 22 15:56:46 1996  Pieter Schoenmakers  <tiggr@tom>
+
+	* ctl-z-map.el: Added z-insert-remark and `C-z i r'.
+	(z-insert-remark): Fixed use of string-match (which is defined
+	somewhere else); now use `z-match-buffer-string'.  Work on an
+        empty file.
+	(z-match-buffer-string): New function.
+
+Tue Nov 28 11:06:41 1995  Pieter Schoenmakers  <tiggr@tom>
+
+	* z-ns-map.el (z-scroll-lines-down): New function.
+	(z-scroll-lines-up): New function.
+	(global-map): Use them.
+
+Mon Nov 27 10:35:33 1995  Pieter Schoenmakers  <tiggr@tom>
+
+	* ctl-z-map.el (z-purge-nil): Fixed for a list of nil's.
+
+Fri Nov 24 09:54:44 1995  Pieter Schoenmakers  <tiggr@tom>
+
+	* ctl-z-map.el (z-purge-nil): Iterative implementation as opposed
+        to recursive one (exceeding max-lisp-eval-depth too soon).
+
+	* z-adjustments.el (z-kill-modes): Do not use mapcan.
+
+	* ctl-z-map.el (z-purge-nil): New function.
+	(z-switch-to-buffer): Use mapcar and z-purge-nil instead of mapcan.
+	Now the (require 'cl) is obsolete (and has been removed).
+	(ctl-z-map): C-z C-g renamed to C-z g, as the previous C-z g is
+	available as C-x =.
+
+Thu Nov 23 11:26:06 1995  Pieter Schoenmakers  <tiggr@tom>
+
+	* ctl-z-map.el (z-cvs-buffer-name): Only match the `*cvs*' buffer
+        name.  We're not interested in buffers with names starting with
+        `*cvs-'.
+	(z-...-buffer-name): Fixed key binding in docs.
+
+	* z-ns-map.el: Incorporated Michael's changes.
+
+	* ctl-z-map.el (z-switch-to-buffer): New function.
+	(z-tail-compilation): Use z-switch-to-buffer.
+	Orthogonalized the start-something and goto-something bindings.
+	(ctl-z-map): `e' for (e?)grep.
+
+	* z-ns-map.el (z-hide-emacs): New function.  Actually, new
+        command, which hide-emacs isn't.
+
+	* Moved z-files-startup.el to `z-files.el'.
+
+Wed Nov 22 08:44:00 1995  Pieter Schoenmakers  <tiggr@tom>
+
+	* z-ns-map.el: Created (from nsbindings.el).
+
+Tue Nov 21 16:30:59 1995  Pieter Schoenmakers  <tiggr@tom>
+
+	* ctl-z-map.el (ctl-z-map): Define C-z C-k for kill-compilation.
+
+Mon Nov 20 11:49:39 1995  Pieter Schoenmakers  <tiggr@tom>
+
+	* z-adjustments.el (mode-line-format): Moved from wft-modeline,
+        which is no longer needed since there is uniquify which can be
+        used (though with horrible characters and an illogical default
+        ordering of the directory name extension).
+
+	* ctl-z-map.el (z-goto-shell): If the shell is the current buffer,
+        invoke (shell) to have it recreate the shell process, if
+        necessary.
+	(z-nearest-buffer): New function.
+	(z-goto-gdb): New function.
+	(z-tail-compilation): Use z-nearest-buffer instead of
+	compilation-last-buffer.
+	(z-goto-shell): Always mangle.
+	(z-mangle-windows): Swap meaning of < 1 and > 1.  Thus C-u goes
+	to other window; M-- makes it the only window.
+
+Sun Nov 19 13:29:10 1995  Pieter Schoenmakers  <tiggr@tricky>
+
+	* ctl-z-map.el (z-insert-name): New command.
+	(z-find-file-shortcut-files): New variable.
+	(z-find-file-shortcut): Use z-find-file-shortcut-files.
+
+	* z-adjustments.el: Created.
+
+Sat Nov 18 20:34:32 1995  Pieter Schoenmakers  <tiggr@tricky>
+
+	* ctl-z-map.el (z-compilation-buffer-name): Put some sanity into
+        the created name.  Thus, completing on `*grep' will give all grep
+        mode buffers...
+
+Thu Nov 16 17:19:54 1995  Pieter Schoenmakers  <tiggr@tom>
+
+	* z-files-startup.el: Created.
+
+	* ctl-z-map.el: Created.
+
