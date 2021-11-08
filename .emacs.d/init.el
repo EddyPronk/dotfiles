@@ -1,4 +1,11 @@
 ;; z-files
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (push "~/.emacs.d" load-path)
 (push "~/.emacs.d/z-files" load-path)
 (load-library "z-files")
@@ -85,6 +92,8 @@
 (push
  '("sutter" ;; Ellemtel without indenting namespaces
    (c-basic-offset . 4)
+   (tab-width . 4)
+   (indent-tabs-mode t)
    (c-comment-only-line-offset . 0)
    (c-hanging-braces-alist . ((substatement-open before after)))
    (c-offsets-alist . ((topmost-intro        . 0)
@@ -108,10 +117,10 @@
 	  '(lambda ()
 	     (if (not (equal c-indentation-style 
 			     (default-value 'c-indentation-style)))
-;;(c-set-style "gnu")
-		 (c-set-style "mantara")
-	       (tab-width 4)
-	       (c-set-style c-indentation-style))))
+(c-set-style "sutter"))))
+	;	 (c-set-style "mantara")
+;;	       (tab-width 4)
+;;	       (c-set-style c-indentation-style))))
 
 (require 'sql)
 
@@ -188,3 +197,20 @@
 (set-cursor-color "red")
 
 ;(load-library "robot-mode.el")
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (string-inflection multiple-cursors magit))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(customize-set-variable 'search-whitespace-regexp nil)
